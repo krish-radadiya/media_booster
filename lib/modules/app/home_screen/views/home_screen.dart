@@ -1,37 +1,58 @@
 import 'package:flutter/material.dart';
-import '../../../../compontas/audio_screen.dart';
-import '../../../../compontas/carosal_slider_screen.dart';
-import '../../../../compontas/video_screen.dart';
+import '../../../../compontas/music.dart';
+import '../../../../compontas/video.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
+
   List<Widget> tablist = [
-    AudioP(),
-    const Video(),
-    const Carousel(),
+    Music(),
+    Video(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(
+        backgroundColor: Colors.tealAccent,
         appBar: AppBar(
-// backgroundColor: Colors.teal,
-          title: const Text("Media Booster"),
+          backgroundColor: Colors.teal,
+          title: const Text(
+            "Media Booster",
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
           centerTitle: true,
           bottom: const TabBar(
+            labelColor: Colors.white,
+            dividerColor: Colors.white,
+            indicatorColor: Colors.white,
+            unselectedLabelColor: Colors.white,
             tabs: [
               Tab(
-                child: Text("Audio"),
-                icon: Icon(Icons.audio_file),
+                child: Text(
+                  "Audio",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                icon: Icon(
+                  Icons.audio_file,
+                ),
               ),
               Tab(
-                child: Text("Video"),
-                icon: Icon(Icons.video_camera_back),
-              ),
-              Tab(
-                child: Text("Carousel"),
-                icon: Icon(Icons.view_carousel),
+                child: Text(
+                  "Video",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                icon: Icon(
+                  Icons.video_camera_back,
+                  color: Colors.white,
+                ),
               ),
             ],
           ),
